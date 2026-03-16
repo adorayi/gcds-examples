@@ -64,6 +64,8 @@ export default function ReportABugPage() {
         <form name="bugReportForm" noValidate onSubmit={handleSubmit}>
           <GcdsErrorSummary listen />
 
+          {/* TODO: This form is a starter template.
+              Add/remove fields to match your issue workflow and keep name/inputId/textareaId stable for tests. */}
           <GcdsInput
             hint={t('reportABugPage.form.versionNumberHint')}
             inputId="version"

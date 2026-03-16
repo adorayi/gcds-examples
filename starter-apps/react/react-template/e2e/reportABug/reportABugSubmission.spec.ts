@@ -13,7 +13,7 @@ test('submits the report bug form', async ({ page }) => {
   await page.getByLabel('Code Reproduction URL').fill('https://example.com/repro')
   await page.getByLabel('System Info').fill('system info')
   await page.getByLabel('Additional Information').fill('additional information')
-  await page.click('text=Submit')
+  await page.getByRole('button', { name: 'Submit' }).click()
 
   await expect(page.locator('gcds-heading').nth(0)).toHaveText(
     resources.en.translation.reportABugPage.heading

@@ -132,3 +132,6 @@ export const resources = {
     }
   }
 } as const
+
+// TODO: Keep EN and FR translation keys in lockstep.
+// Add keys to both locales in the same commit to avoid runtime i18n drift.
