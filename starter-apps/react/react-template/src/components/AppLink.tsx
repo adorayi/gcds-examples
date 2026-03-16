@@ -38,6 +38,8 @@ export default function AppLink({
     navigate(to)
   }
 
+  // TODO: Use this component for app-internal links so client-side routing is preserved.
+  // For external URLs, pass external={true}; extend this wrapper if you need analytics or tracking.
   if (variant === 'nav') {
     return (
       <GcdsNavLink

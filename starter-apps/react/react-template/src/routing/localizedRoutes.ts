@@ -39,6 +39,8 @@ function findRouteKeyBySegment(segment: string, locale: AppLocale): RouteKey | n
     return localeMatch
   }
 
+  // TODO: If you support localized aliases or legacy URLs, extend matching rules here.
+  // Keep a single RouteKey result so locale switching always maps to one page identity.
   const anyLocaleMatch = routeKeys.find((key) =>
     locales.some((candidateLocale) => localizedSegments[key][candidateLocale] === segment)
   )

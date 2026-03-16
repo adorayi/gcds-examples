@@ -29,6 +29,8 @@ export default function AppShell({ locale }: AppShellProps) {
   const currentRouteKey = getRouteKeyFromPath(location.pathname) ?? 'home'
   const otherLangPath = getPathInLocale(location.pathname, getOtherLocale(locale))
 
+  // TODO: Replace these sample navigation links with your project routes.
+  // Add a matching RouteKey/slug mapping so locale switching stays consistent.
   const navElements: Array<{ routeKey: RouteKey; label: string }> = [
     {
       routeKey: 'about',
@@ -42,6 +44,7 @@ export default function AppShell({ locale }: AppShellProps) {
 
   return (
     <>
+      {/* TODO: Keep langHref pointing at an equivalent page in the other locale. */}
       <GcdsHeader langHref={otherLangPath} skipToHref="#main-content">
         <GcdsSearch slot="search" />
 
@@ -66,6 +69,8 @@ export default function AppShell({ locale }: AppShellProps) {
         </GcdsTopNav>
 
         <GcdsBreadcrumbs slot="breadcrumb">
+          {/* TODO: This starter breadcrumb logic is intentionally simple.
+              Consider deriving breadcrumbs from route metadata as pages scale. */}
           {currentRouteKey !== 'home' ? (
             <AppLink to={getLocalizedPath('home', locale)} variant="breadcrumb">
               {t('home')}
